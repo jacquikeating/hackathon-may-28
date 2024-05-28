@@ -6,8 +6,12 @@
     <title>Document</title>
 </head>
 <body>
+
+    <!-- Very basic naming/writing for now, will improve later -->
+
     <h1 class="header__title">When to Walk</h1>
     <h2 class="header__subtitle">Find the best time to go for a walk today!</h2>
+
     <form class="form">
         <label class="form__label">City
             <input class="form__input form__input--city" type="text" placeholder="Toronto" />
@@ -41,7 +45,10 @@
                 <input class="form__radio"  id="rain" type="radio" name="sort-by" value="rain">Least likely to rain
             </label>
         </fieldset>
+
+        <input class="form__submit" type="submit" value="Submit" />
     </form>
+    
     <script src="/scripts/index.js" type="module"></script>
 </body>
 </html>
