@@ -6,7 +6,42 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1 class="header__title">When to Walk</h1>
+    <h2 class="header__subtitle">Find the best time to go for a walk today!</h2>
+    <form class="form">
+        <label class="form__label">City
+            <input class="form__input form__input--city" type="text" placeholder="Toronto" />
+        </label>
+
+        <fieldset class="form__fieldset">
+            <legend class="form__legend">Time Range</legend>
+            <label class="form__label">
+                <input class="form__radio"  id="morning" type="radio" name="time" value="morning">Morning (6 AM to 12 PM)
+            </label>
+            <label class="form__label">
+                <input class="form__radio"  id="afternoon" type="radio" name="time" value="afternoon">Afternoon (12 PM to 6 PM)
+            </label>
+            <label class="form__label">
+                <input class="form__radio"  id="evening" type="radio" name="time" value="evening">Evening (6 PM to 12 AM)
+            </label>
+            <label class="form__label">
+                <input class="form__radio"  id="night" type="radio" name="time" value="night">Night (12 AM to 6 PM)
+            </label>
+        </fieldset>
+
+        <fieldset class="form__fieldset">
+            <legend class="form__legend">Preferred Weather Conditions</legend>
+            <label class="form__label">
+                <input class="form__radio"  id="coolest" type="radio" name="sort-by" value="coolest">Coolest temperature
+            </label>
+            <label class="form__label">
+                <input class="form__radio"  id="afternoon" type="radio" name="sort-by" value="afternoon">Lowest humidity
+            </label>
+            <label class="form__label">
+                <input class="form__radio"  id="evening" type="radio" name="sort-by" value="evening">Least likely to rain
+            </label>
+        </fieldset>
+    </form>
     <script src="/scripts/index.js" type="module"></script>
 </body>
 </html>
