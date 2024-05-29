@@ -29,14 +29,6 @@
     transition: all linear 0.2s;
 }
 
-// @mixin border-gradient($width) {
-//     border-top: 3px solid;
-//     border-image-slice: 1;
-//     border-width: $width;
-//     border-image-source: $gradient;
-//     padding-top: $standard-padding;
-//  }
- 
  @mixin divider-gradient($height, $width) {
     height: $height;
     width: $width;

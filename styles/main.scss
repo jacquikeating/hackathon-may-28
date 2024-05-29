@@ -11,7 +11,7 @@
 }
 
 body {
-    max-width: 320px;
+    max-width: 350px;
     margin: auto;
     height: 100vh;
     background-color: $main-bg-clr;
@@ -19,28 +19,23 @@ body {
 
 .header {
     padding: $standard-padding $standard-padding 0 $standard-padding;
-    // position: relative;
+    position: relative;
 
-    // .fa-solid {
-    //     font-size: 3rem;
-    //     text-align: center;
-    //     display: block;
-    //     margin: $small-padding auto;
-    //     opacity: 0.6;
-    //     color: $heading-text-clr;
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
 
-    // }
-
-    // .fa-solid {
-//     height: 10rem;
-//     font-size: 60rem;
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     z-index: -1;
-//     opacity: 0.04;
-//     color: $main-text-clr;
-// }
+    &__icon {
+        font-size: 3rem;
+        text-align: center;
+        display: block;
+        margin: $small-padding auto;
+        opacity: 0.7;
+        color: $heading-text-clr;
+        text-align: center;
+    }
 
     &__title {
         margin-top: 0;
@@ -52,7 +47,7 @@ body {
     }
 
     &__subtitle {
-        margin: 0 $standard-padding $large-padding $standard-padding;
+        margin: 0 $standard-padding $large-padding;
         font-size: 2rem;
         font-weight: 500;
         font-family: 'Nunito', Arial, Helvetica, sans-serif;
@@ -68,14 +63,13 @@ body {
 }
 
 .main {
-
     &__toggle-form-btn {
         @include button;
         display: block;
         margin: $large-padding auto;
         width: 70%;
         height: 35px;
-        display: none; /* Change to flex to show */
+        display: none;
         align-items: center;
         justify-content: center;
         gap: $standard-padding;
@@ -127,6 +121,7 @@ body {
         @include input($small-padding, $standard-padding);
         @include label-text;
         cursor: pointer;
+        margin-bottom: $large-padding;
 
         &:hover {
             background: $gradient;
@@ -222,7 +217,6 @@ body {
         &--top {
             border: 2px solid $heading-text-clr;
             background: $gradient;
-            // background-color: $accent-clr;
         }
     }
 
@@ -232,7 +226,7 @@ body {
         position: absolute;
         top: 10px;
         right: 10px;
-
+        opacity: 0.7;
     }
     
     &__time {
@@ -262,7 +256,6 @@ body {
     }
 }
 
-
 .show-form {
     .main__toggle-form-btn {
         display: none;
@@ -284,49 +277,5 @@ body {
 
     .form {
         display: none;
-    }
-}
-
-.show-both {
-    .main__toggle-form-btn {
-        display: flex;
-    }
-
-    .results {
-        display: flex;
-    }
-
-    .form {
-        display: flex;
-    }
-}
-
-
-// .fa-mountain-sun {
-//     height: 10rem;
-//     font-size: 60rem;
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     z-index: -1;
-//     opacity: 0.04;
-//     color: $main-text-clr;
-// }
-
-.radio-group__option {
-    position: relative;
-
-    .input__icon {
-        position: absolute;
-        top: 50%;
-        right: 1rem;
-        font-size: 1.5rem;
-        display: none;
-    }
-
-    &:hover {
-        .input__icon { 
-            display: block;
-        }
     }
 }

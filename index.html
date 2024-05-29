@@ -17,14 +17,12 @@
   </head>
 
   <body>
-    <!-- Very basic naming/writing for now, will improve later -->
     <header class="header">
-      <!-- <i class="fa-solid fa-mountain-sun"></i> -->
-      <!-- <i class="fa-solid fa-sun"></i> -->
-      <!-- <i class="fa-solid fa-person-walking"></i> -->
-      <!-- <i class="fa-solid fa-cloud-sun"></i> -->
-
-      <h1 class="header__title">When to Walk</h1>
+      <div class="header__wrapper">
+        <i class="header__icon fa-solid fa-mountain-sun"></i>
+        <h1 class="header__title">When to Walk</h1>
+      </div>
+      
       <h2 class="header__subtitle">
         Find the best time to go for a walk today!
       </h2>
@@ -41,22 +39,16 @@
             <p class="results__primary-criteria results__primary-criteria--top">
               15° C
             </p>
-            <!-- <p class="results__secondary-criteria">62%</p>
-                    <p class="results__secondary-criteria">40% chance of rain</p> -->
           </li>
 
           <li class="results__list-item">
             <h3 class="results__time">1 PM</h3>
             <p class="results__primary-criteria">16° C</p>
-            <!-- <p class="results__secondary-criteria">62%</p>
-                    <p class="results__secondary-criteria">40% chance of rain</p> -->
           </li>
 
           <li class="results__list-item">
             <h3 class="results__time">2 PM</h3>
             <p class="results__primary-criteria">17° C</p>
-            <!-- <p class="results__secondary-criteria">62%</p>
-                    <p class="results__secondary-criteria">40% chance of rain</p> -->
           </li>
         </ul>
       </section>
@@ -176,13 +168,14 @@
         </fieldset>
 
         <input class="form__submit" type="submit" value="Submit" />
-        <!-- <i class="fa-solid fa-mountain-sun"></i> -->
+        
       </form>
 
       <button class="main__toggle-form-btn">
         <i class="main__toggle-form-icon fa-solid fa-arrow-down-wide-short"></i>
         <p class="main__toggle-form-text">Show form</p>
       </button>
+
     </main>
   </body>
 </html>
