@@ -21,12 +21,13 @@ const getDailyForecast = async (location, timeRange, condition) => {
       timeOfDay = response.data.forecast.forecastday[0].hour.slice(12, 19);
     } else if (timeRange === "evening") {
       timeOfDay = response.data.forecast.forecastday[0].hour.slice(18, 24);
-      // timeOfDay.append(response.data.forecast.forecastday[0].hour[0]);
+      timeOfDay.push(response.data.forecast.forecastday[0].hour[0]);
     } else {
       timeOfDay = response.data.forecast.forecastday[0].hour.slice(0, 7); // can fix later if time
     }
 
     console.log(timeOfDay);
+    // console.log(timeOfDay.push("hello"));
     // can wrap each of these in functions if want to eventually
     let resultToSort = {};
     let sorted;
