@@ -23,6 +23,9 @@ const getDailyForecast = async (location, timeRange, condition) => {
       timeOfDay = response.data.forecast.forecastday[0].hour.slice(0, 7);
     }
 
+    console.log(timeRange)
+      console.log(timeOfDay)
+
     let resultToSort = {};
     let sorted;
     if (condition === "temp") {
@@ -160,7 +163,7 @@ function displayOneResult(results, key, condition, i) {
   if (i === 0) {
     resultsTimeEl.classList.add("results__time--top");
   }
-  resultsTimeEl.textContent = key.slice(-4, key.length);
+  resultsTimeEl.textContent = key.slice(-5, key.length);
   resultsListItemEl.appendChild(resultsTimeEl);
 
   const resultsCritEl = document.createElement("p");
