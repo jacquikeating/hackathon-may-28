@@ -157,13 +157,13 @@ walkForm.addEventListener("submit", (event) => {
 });
 
 function toggleResults() {
-  const main = document.querySelector(".main")
+  const main = document.querySelector(".main");
   main.classList.add("show-results");
   main.classList.remove("show-form");
 }
 
 function toggleForm() {
-  const main = document.querySelector(".main")
+  const main = document.querySelector(".main");
   main.classList.add("show-form");
   main.classList.remove("show-results");
 }
@@ -195,9 +195,17 @@ function displayOneResult(results, key, condition, i) {
   resultsListItemEl.classList.add("results__list-item");
   if (i === 0) {
     resultsListItemEl.classList.add("results__list-item--top");
-    console.log("working test");
+    resultsListEl.appendChild(resultsListItemEl);
+    // console.log("working test");
+    // const resultsIconEl = document.createElement("img");
+    // if (condition === "temp") {
+    //   const resultsIconEl = document.createElement("img");
+    //   resultsIconEl.classList.add("fa-solid fa-temperature-quarter");
+    //   resultsListItemEl.appendChild(resultsIconEl)
+    // }
+  } else {
+    resultsListEl.appendChild(resultsListItemEl);
   }
-  resultsListEl.appendChild(resultsListItemEl);
 
   const resultsTimeEl = document.createElement("h3");
   resultsTimeEl.classList.add("results__time");
@@ -219,7 +227,14 @@ function displayOneResult(results, key, condition, i) {
   }
 
   resultsListItemEl.appendChild(resultsCritEl);
+
+  if (i === 0 && condition === "temp") {
+    const resultsIconEl = document.createElement("img");
+    // resultsIconEl.classList.add("fa-solid fa-temperature-quarter");
+    resultsIconEl.src = "./attributes/temperature-quarter-solid.svg";
+    resultsListItemEl.appendChild(resultsIconEl);
+  }
 }
 
 const toggleFormBtn = document.querySelector(".main__toggle-form-btn");
-toggleFormBtn.addEventListener("click", toggleForm)
+toggleFormBtn.addEventListener("click", toggleForm);
