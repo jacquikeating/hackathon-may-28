@@ -1,12 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <script src="/scripts/index.js" type="module"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>When to Walk</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./scripts/index.js" defer></script>
+    <script src="https://kit.fontawesome.com/1f9b885cb6.js" crossorigin="anonymous"></script>
+  </head>
+  
+  <body>
+    <!-- Very basic naming/writing for now, will improve later -->
+    <header class="header">
+        <!-- <i class="fa-solid fa-mountain-sun"></i> -->
+        <!-- <i class="fa-solid fa-sun"></i> -->
+        <!-- <i class="fa-solid fa-person-walking"></i> -->
+        <!-- <i class="fa-solid fa-cloud-sun"></i> -->
+
+        <h1 class="header__title">When to Walk</h1>
+        <h2 class="header__subtitle">Find the best time to go for a walk today!</h2>
+        <div class="header__dividing-line"></div>
+    </header>
+
+    <main class="main">
+        <form class="form">
+
+            <div class="form__location">
+                <label class="form__label" for="location">City</label>
+                <input class="form__input" id="location" type="text" placeholder="Toronto" />
+            </div>
+
+            <div class="form__dividing-line"></div>
+
+            <fieldset class="radio-group">
+                <legend class="radio-group__legend">Time Range</legend>
+                <ul class="radio-group__list">
+                    <li class="radio-group__option">
+                        <input class="radio-group__radio" id="morning" type="radio" name="time" value="morning" />
+                        <label class="radio-group__label" for="morning" tabindex="0">Morning (6 AM to 12 PM)</label>
+                    </li>
+                    <li class="radio-group__option">
+                        <input class="radio-group__radio" id="afternoon" type="radio" name="time" value="afternoon" />
+                        <label class="radio-group__label" for="afternoon" tabindex="0">Afternoon (12 PM to 6 PM)</label>
+                    </li>
+                    <li class="radio-group__option">
+                        <input class="radio-group__radio" id="evening" type="radio" name="time" value="evening" />
+                        <label class="radio-group__label" for="evening" tabindex="0">Evening (6 PM to 12 AM)</label>
+                    </li>
+                    <li class="radio-group__option">
+                        <input class="radio-group__radio" id="night" type="radio" name="time" value="night" />
+                        <label class="radio-group__label" for="night" tabindex="0">Night (12 AM to 6 PM)</label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <div class="form__dividing-line"></div>
+
+            <fieldset class="radio-group">
+                <legend class="radio-group__legend">Preferred Weather Conditions</legend>
+                <ul class="radio-group__list">
+                    <li class="radio-group__option">
+                        <input class="radio-group__radio" id="temp" type="radio" name="sort-by" value="temp" />
+                        <label class="radio-group__label" for="temp" tabindex="0">Coolest temperature</label>
+                    </li>
+                    <li class="radio-group__option">
+                        <input class="radio-group__radio" id="humidity" type="radio" name="sort-by" value="humidity" />
+                        <label class="radio-group__label" for="humidity" tabindex="0">Lowest humidity</label>
+                    </li>
+                    <li class="radio-group__option">
+                        <input class="radio-group__radio" id="rain" type="radio" name="sort-by" value="rain" />
+                        <label class="radio-group__label" for="rain" tabindex="0">Least likely to rain</label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <input class="form__submit" type="submit" value="Submit" />
+
+            <!-- <i class="fa-solid fa-mountain-sun"></i> -->
+        </form>
+
+        <section class="results">
+            <h2 class="results__heading">Results</h2>
+            <ul class="results__list">
+                <li class="results__list-item">
+                    <h3 class="results__time">12 PM</h3>
+                    <p class="results__primary-criteria">15° C</p>
+                    <!-- <p class="results__secondary-criteria">62%</p>
+                    <p class="results__secondary-criteria">40% chance of rain</p> -->
+                </li>
+            </ul>
+        </section>
+    </main>
 </body>
 </html>

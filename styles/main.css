@@ -1,0 +1,176 @@
+/* old */
+:root {
+  font-size: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 320px;
+  margin: auto;
+  height: 100vh;
+  background-color: #F9F9F9;
+}
+
+.header {
+  padding: 2rem 2rem 0 2rem;
+}
+.header__title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  font-family: "Poetsen One";
+  text-align: center;
+  color: #3DABF5;
+}
+.header__subtitle {
+  margin: 0 2rem 3rem 2rem;
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-style: italic;
+  color: #444;
+}
+.header__dividing-line {
+  height: 6px;
+  width: 100%;
+  margin: auto;
+  background: linear-gradient(90deg, #FFE45E, #7FC8F8);
+  margin: 3rem 0;
+}
+
+.form {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.form__label {
+  display: block;
+  width: 100%;
+  margin-bottom: -0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  color: #3DABF5;
+}
+.form__input {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem 1rem;
+  border-radius: 5px;
+  border: 1px solid #CCC;
+  background-color: white;
+  transition: all linear 0.2s;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  color: #444;
+}
+.form__input:focus {
+  outline: 1px solid #444;
+}
+.form__input::-moz-placeholder {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  color: #444;
+  color: rgb(165, 165, 165);
+}
+.form__input::placeholder {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  color: #444;
+  color: rgb(165, 165, 165);
+}
+.form__dividing-line {
+  height: 3px;
+  width: 70%;
+  margin: auto;
+  background: linear-gradient(90deg, #FFE45E, #7FC8F8);
+}
+.form__submit {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border: 1px solid #CCC;
+  background-color: white;
+  transition: all linear 0.2s;
+  display: block;
+  width: 100%;
+  margin-bottom: -0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  color: #3DABF5;
+  cursor: pointer;
+}
+.form__submit:hover, .form__submit:focus {
+  background: linear-gradient(90deg, #FFE45E, #7FC8F8);
+  font-weight: 700;
+  transform: scale(1.1);
+}
+.form__submit:focus {
+  border: none;
+  outline: 1px solid #3DABF5;
+}
+
+.radio-group {
+  display: flex;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.radio-group__legend {
+  display: block;
+  width: 100%;
+  margin-bottom: -0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  color: #3DABF5;
+}
+.radio-group__list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+.radio-group__label {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  color: #444;
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem 1rem;
+  border-radius: 5px;
+  border: 1px solid #CCC;
+  background-color: white;
+  transition: all linear 0.2s;
+  cursor: pointer;
+}
+.radio-group__label:focus {
+  outline: 1px solid #444;
+}
+.radio-group__radio {
+  display: none;
+}
+.radio-group__radio:hover + .radio-group__label, .radio-group__radio.form__submit:focus + .radio-group__label {
+  background-color: #FFF5C2;
+  font-weight: 700;
+}
+.radio-group__radio:checked + .radio-group__label {
+  background-color: #FFEE99;
+  font-weight: 700;
+}/*# sourceMappingURL=main.css.map */
