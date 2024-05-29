@@ -195,6 +195,18 @@ body {
         text-align: center;
     }
 
+    &__description {
+        @include body-text;
+        text-align: center;
+        display: block;
+        margin-top: -1rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: $main-text-clr;
+    }
+
     &__list {
         list-style: none;
         margin: 0;

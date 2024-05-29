@@ -128,6 +128,18 @@ const resultsListEl = document.querySelector(".results__list");
 function displayResults(results, condition) {
   resultsListEl.innerHTML = "";
   const times = Object.keys(results);
+  const description = document.createElement("p");
+  description.classList.add("results__description");
+  if (condition === 'temp') {
+    description.innerText = 'Coolest temperature';
+  } else if (condition === 'humidity') {
+    description.innerText = 'Lowest humidity';
+  } else {
+    description.innerText = 'Least chance of rain';
+  }
+  
+
+  resultsListEl.appendChild(description);
   for (let i = 0; i < times.length; i++) {
     displayOneResult(results, times[i], condition, i);
   }

@@ -259,6 +259,20 @@ body {
   font-weight: 700;
   text-align: center;
 }
+.results__description {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  color: #444;
+  text-align: center;
+  display: block;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #444;
+}
 .results__list {
   list-style: none;
   margin: 0;
