@@ -11,22 +11,6 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./scripts/index.js" defer></script>
     <script src="https://kit.fontawesome.com/1f9b885cb6.js" crossorigin="anonymous"></script>
-
-    <!-- inline script is cringe, this is just so I don't cause merge conflicts while testing. MOVE TO INDEX.JS WHEN READY! -->
-    <script>
-        // function toggleForm() {
-        //     const main = document.querySelector(".main")
-        //     main.classList.add("show-form");
-        //     main.classList.remove("show-results");
-        // }
-
-        // function toggleResults() {
-        //     const main = document.querySelector(".main")
-        //     main.classList.add("show-results");
-        //     main.classList.remove("show-form");
-        // }
-    </script>
-
   </head>
   
   <body>
@@ -43,7 +27,6 @@
     </header>
 
     <main class="main show-form">
-        <!-- inline onclick is cringe, this is just so I don't cause merge conflicts while testing. MOVE TO INDEX.JS WHEN READY! -->
         <section class="results">
             <h2 class="results__heading">Results</h2>
 
@@ -87,6 +70,7 @@
                     <li class="radio-group__option">
                         <input class="radio-group__radio" id="morning" type="radio" name="time" value="morning" />
                         <label class="radio-group__label" for="morning" tabindex="0">Morning (6 AM to 12 PM)</label>
+                        <i class="input__icon fa-solid fa-sun"></i>
                     </li>
                     <li class="radio-group__option">
                         <input class="radio-group__radio" id="afternoon" type="radio" name="time" value="afternoon" />

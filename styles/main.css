@@ -119,6 +119,7 @@ body {
   font-weight: 400;
   font-family: "Nunito", Arial, Helvetica, sans-serif;
   color: #444;
+  position: relative;
 }
 .form__input:focus {
   outline: 1px solid #444;
@@ -173,9 +174,9 @@ body {
 
 .radio-group {
   display: flex;
-  border: 0;
   padding: 0;
   margin: 0;
+  border: none;
 }
 .radio-group__legend {
   display: block;
@@ -321,4 +322,14 @@ body {
 }
 .show-both .form {
   display: flex;
+}
+
+.radio-group__option {
+  position: relative;
+}
+.radio-group__option .input__icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  font-size: 1.5rem;
 }/*# sourceMappingURL=main.css.map */

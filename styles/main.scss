@@ -107,8 +107,8 @@ body {
     &__input {
         @include input($small-padding, $small-padding);
         @include body-text;
+        position: relative;
         
-
         &:focus {
             outline: 1px solid $main-text-clr;
         }
@@ -144,10 +144,9 @@ body {
 
 .radio-group {
     display: flex;
-    border: 0;
     padding: 0;
-    margin: 0;
-
+    margin: 0;  
+    border: none;
 
     &__legend {
         @include label-text;
@@ -304,3 +303,14 @@ body {
 //     opacity: 0.04;
 //     color: $main-text-clr;
 // }
+
+.radio-group__option {
+    position: relative;
+
+    .input__icon {
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        font-size: 1.5rem;
+    }
+}
