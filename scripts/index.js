@@ -16,13 +16,14 @@ const getDailyForecast = async (location, timeRange, condition) => {
 
     let timeOfDay; // array of objects
     if (timeRange === "morning") {
-      timeOfDay = response.data.forecast.forecastday[0].hour.slice(0, 7);
+      timeOfDay = response.data.forecast.forecastday[0].hour.slice(6, 13);
     } else if (timeRange === "afternoon") {
-      timeOfDay = response.data.forecast.forecastday[0].hour.slice(7, 13);
+      timeOfDay = response.data.forecast.forecastday[0].hour.slice(12, 19);
     } else if (timeRange === "evening") {
-      timeOfDay = response.data.forecast.forecastday[0].hour.slice(13, 19);
+      timeOfDay = response.data.forecast.forecastday[0].hour.slice(18, 24);
+      // timeOfDay.append(response.data.forecast.forecastday[0].hour[0]);
     } else {
-      timeOfDay = response.data.forecast.forecastday[0].hour.slice(19, 24); // can fix later if time
+      timeOfDay = response.data.forecast.forecastday[0].hour.slice(0, 7); // can fix later if time
     }
 
     console.log(timeOfDay);
@@ -45,7 +46,7 @@ const getDailyForecast = async (location, timeRange, condition) => {
       for (let i = 0; i < timeOfDay.length; i++) {
         // console.log(timeOfDay[i]);
         resultToSort[timeOfDay[i].time] = timeOfDay[i]["chance_of_rain"];
-        sorted = Object.values(resultToSort).sort((a, b) => b - a);
+        sorted = Object.values(resultToSort).sort((a, b) => a - b);
       }
     }
     console.log(resultToSort);
@@ -54,6 +55,48 @@ const getDailyForecast = async (location, timeRange, condition) => {
     console.log(sorted);
 
     // getKeyByValue(resultToSort, ) // how to handle equivalent values??, get a current conditions img and text, want to use?
+
+    let results = {};
+    const temp = resultToSort;
+    console.log(condition);
+
+    if (condition === "rain") {
+      for (let i = 0; i < sorted.length; i++) {
+        if (sorted[i] < 50) {
+          let key = getKeyByValue(temp, sorted[i]);
+          results[`${key}`] = sorted[i];
+          delete temp[`${key}`]; // this line takes care of duplicate values
+          console.log(results);
+        }
+      }
+    } else {
+      for (let i = 0; i < 3; i++) {
+        let key = getKeyByValue(temp, sorted[i]);
+        // results[`${getKeyByValue(resultToSort, sorted[i])}`] = sorted[i];
+        results[`${key}`] = sorted[i];
+        delete temp[`${key}`]; // this line takes care of duplicate values
+
+        // console.log(`${getKeyByValue(resultToSort, sorted[i])}`);
+        // sorted.splice(i, 1);
+        // console.log(sorted);
+      }
+    }
+
+    // for (let i = 0; i < 3; i++) {
+    //   let key = getKeyByValue(temp, sorted[i]);
+    //   // results[`${getKeyByValue(resultToSort, sorted[i])}`] = sorted[i];
+    //   results[`${key}`] = sorted[i];
+    //   delete temp[`${key}`]; // this line takes care of duplicate values
+
+    //   // console.log(`${getKeyByValue(resultToSort, sorted[i])}`);
+    //   // sorted.splice(i, 1);
+    //   // console.log(sorted);
+    // }
+
+    console.log(results);
+
+    // call the html function here
+    displayResults(results, condition);
   } catch (error) {
     console.log(error);
   }
@@ -119,3 +162,31 @@ walkForm.addEventListener("submit", (event) => {
 // create an object with the array.time key and the chance of rain as the value
 
 // have another function that writes it to html
+
+const resultsListEl = document.querySelector(".results__list");
+// const resultsTimeEl = document.querySelector(".results__time");
+// const resultsCritEl = document.querySelector(".results__primary-criteria");
+
+function displayResults(results, condition) {
+  resultsListEl.innerHTML = "";
+  const times = Object.keys(results);
+  for (let i = 0; i < times.length; i++) {
+    displayOneResult(results, times[i], condition);
+  }
+}
+
+function displayOneResult(results, key, condition) {
+  const resultsListItemEl = document.createElement("li");
+  resultsListItemEl.classList.add("results__list-item");
+  resultsListEl.appendChild(resultsListItemEl);
+
+  const resultsTimeEl = document.createElement("h3");
+  resultsTimeEl.classList.add("results__time");
+  resultsTimeEl.textContent = key;
+  resultsListItemEl.appendChild(resultsTimeEl);
+
+  const resultsCritEl = document.createElement("p");
+  resultsCritEl.classList.add("results__primary-criteria");
+  resultsCritEl.textContent = results[key];
+  resultsListItemEl.appendChild(resultsCritEl);
+}
