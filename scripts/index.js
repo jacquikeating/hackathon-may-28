@@ -153,7 +153,20 @@ walkForm.addEventListener("submit", (event) => {
   walkForm.reset();
 
   getDailyForecast(location, timeRange, condition);
+  toggleResults();
 });
+
+function toggleResults() {
+  const main = document.querySelector(".main")
+  main.classList.add("show-results");
+  main.classList.remove("show-form");
+}
+
+function toggleForm() {
+  const main = document.querySelector(".main")
+  main.classList.add("show-form");
+  main.classList.remove("show-results");
+}
 
 // want to extract the data for the time of day, morning, afternoon, evening or night
 // for each then look in a different range
@@ -207,3 +220,6 @@ function displayOneResult(results, key, condition, i) {
 
   resultsListItemEl.appendChild(resultsCritEl);
 }
+
+const toggleFormBtn = document.querySelector(".main__toggle-form-btn");
+toggleFormBtn.addEventListener("click", toggleForm)
