@@ -230,8 +230,21 @@ function displayOneResult(results, key, condition, i) {
 
   if (i === 0 && condition === "temp") {
     const resultsIconEl = document.createElement("img");
-    // resultsIconEl.classList.add("fa-solid fa-temperature-quarter");
     resultsIconEl.src = "./attributes/temperature-quarter-solid.svg";
+    resultsIconEl.classList.add("results__icon");
+    resultsListItemEl.appendChild(resultsIconEl);
+  }
+
+  if (i === 0 && condition === "humidity") {
+    const resultsIconEl = document.createElement("img");
+    resultsIconEl.src = "./attributes/droplet-solid.svg";
+    resultsIconEl.classList.add("results__icon");
+    resultsListItemEl.appendChild(resultsIconEl);
+  }
+
+  if (i === 0 && condition === "rain") {
+    const resultsIconEl = document.createElement("img");
+    resultsIconEl.src = "./attributes/umbrella-solid.svg";
     resultsIconEl.classList.add("results__icon");
     resultsListItemEl.appendChild(resultsIconEl);
   }
