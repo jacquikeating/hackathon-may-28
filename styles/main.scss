@@ -67,6 +67,33 @@ body {
     }
 }
 
+.main {
+
+    &__toggle-form-btn {
+        @include button;
+        display: block;
+        margin: $large-padding auto;
+        width: 70%;
+        height: 35px;
+        display: none; /* Change to flex to show */
+        align-items: center;
+        justify-content: center;
+        gap: $standard-padding;
+    }
+
+    &__toggle-form-text {
+        @include body-text;
+        font-weight: 700;
+        font-style: italic;
+        color: $heading-text-clr;
+    }
+
+    &__toggle-form-icon {
+        font-size: 2rem;
+        color: $heading-text-clr;
+    }
+}
+
 .form {
     padding: $small-padding $standard-padding;
     display: flex;
@@ -159,6 +186,113 @@ body {
         }
     }
 }
+
+.results {
+    margin-top: $large-padding;
+    display: flex;
+    flex-direction: column;
+
+    &__heading {
+        @include label-text;
+        font-size: 3rem;
+        margin: 0 0 $standard-padding;
+        padding: 0;
+        font-weight: 700;
+        text-align: center;
+
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: $small-padding;
+    }
+
+    &__list-item {
+        width: 100%;
+        display: flex;
+        gap: $standard-padding;
+        align-items: center;
+        border: 1px solid $border-clr;
+        border-radius: 5px;
+        padding: $small-padding $standard-padding;
+
+        &--top {
+            border: 2px solid $heading-text-clr;
+            background: $gradient;
+            // background-color: $accent-clr;
+        }
+    }
+    
+    &__time {
+        @include label-text;
+        margin: 0;
+        padding: 0;
+        width: 8rem;
+        font-size: 2.2rem;
+        font-family: 'Poetsen One';
+        color: $main-text-clr;
+
+        &--top {
+            font-size: 2.5rem;
+        }
+    }
+
+    &__primary-criteria {
+        @include body-text;
+        margin: 0;
+        border-radius: 5px;
+        font-weight: 700;
+        font-size: 1.5rem;
+
+        &--top {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+
+.show-form {
+    .main__toggle-form-btn {
+        display: none;
+    }
+
+    .results {
+        display: none;
+    }
+
+    .form {
+        display: flex;
+    }
+}
+
+.show-results {
+    .main__toggle-form-btn {
+        display: flex;
+    }
+
+    .form {
+        display: none;
+    }
+}
+
+.show-both {
+    .main__toggle-form-btn {
+        display: flex;
+    }
+
+    .results {
+        display: flex;
+    }
+
+    .form {
+        display: flex;
+    }
+}
+
 
 // .fa-mountain-sun {
 //     height: 10rem;

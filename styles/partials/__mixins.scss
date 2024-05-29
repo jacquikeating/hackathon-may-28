@@ -43,3 +43,21 @@
     margin: auto;
     background: $gradient;
  }
+
+ @mixin button() {
+    @include input($small-padding, $standard-padding);
+        @include label-text;
+        cursor: pointer;
+
+        &:hover {
+            background: $gradient;
+            font-weight: 700;
+            transform: scale(1.1);
+        }
+
+        &:focus {
+            @extend :hover;
+            border: none;
+            outline: 1px solid $heading-text-clr;
+        }
+ }
