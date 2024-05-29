@@ -3,52 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>When to Walk</title>
 </head>
 <body>
 
     <!-- Very basic naming/writing for now, will improve later -->
+    <header class="header">
+        <!-- <i class="fa-solid fa-mountain-sun"></i> -->
+        <!-- <i class="fa-solid fa-sun"></i> -->
+        <!-- <i class="fa-solid fa-person-walking"></i> -->
+        <!-- <i class="fa-solid fa-cloud-sun"></i> -->
 
-    <h1 class="header__title">When to Walk</h1>
-    <h2 class="header__subtitle">Find the best time to go for a walk today!</h2>
+        <h1 class="header__title">When to Walk</h1>
+        <h2 class="header__subtitle">Find the best time to go for a walk today!</h2>
+        <div class="header__dividing-line"></div>
+    </header>
 
-    <form class="form">
-        <label class="form__label">City
-            <input class="form__input form__input--city" type="text" placeholder="Toronto" />
-        </label>
+    <main class="main">
+        <form class="form">
 
-        <fieldset class="form__fieldset">
-            <legend class="form__legend">Time Range</legend>
-            <label class="form__label">
-                <input class="form__radio"  id="morning" type="radio" name="time" value="morning">Morning (6 AM to 12 PM)
-            </label>
-            <label class="form__label">
-                <input class="form__radio"  id="afternoon" type="radio" name="time" value="afternoon">Afternoon (12 PM to 6 PM)
-            </label>
-            <label class="form__label">
-                <input class="form__radio"  id="evening" type="radio" name="time" value="evening">Evening (6 PM to 12 AM)
-            </label>
-            <label class="form__label">
-                <input class="form__radio"  id="night" type="radio" name="time" value="night">Night (12 AM to 6 PM)
-            </label>
-        </fieldset>
+            <div class="form__city">
+                <label class="form__label" for="city">City</label>
+                <input class="form__input" id="city" type="text" placeholder="Toronto" />
+            </div>
 
-        <fieldset class="form__fieldset">
-            <legend class="form__legend">Preferred Weather Conditions</legend>
-            <label class="form__label">
-                <input class="form__radio"  id="temp" type="radio" name="sort-by" value="temp">Coolest temperature
-            </label>
-            <label class="form__label">
-                <input class="form__radio"  id="humidity" type="radio" name="sort-by" value="humidity">Lowest humidity
-            </label>
-            <label class="form__label">
-                <input class="form__radio"  id="rain" type="radio" name="sort-by" value="rain">Least likely to rain
-            </label>
-        </fieldset>
+            <div class="form__dividing-line"></div>
 
-        <input class="form__submit" type="submit" value="Submit" />
-    </form>
+            <fieldset class="radio-group">
+                <legend class="radio-group__legend">Time Range</legend>
+                <ul class="radio-group__list">
+                    <li class="radio-group__option">
+                        <input class="radio-group__radio" id="morning" type="radio" name="time" value="morning" />
+                        <label class="radio-group__label" for="morning" tabindex="0">Morning (6 AM to 12 PM)</label>
+                    </li>
+                    <li class="radio-group__option">
+                        <input class="radio-group__radio" id="afternoon" type="radio" name="time" value="afternoon" />
+                        <label class="radio-group__label" for="afternoon" tabindex="0">Afternoon (12 PM to 6 PM)</label>
+                    </li>
+                    <li class="radio-group__option">
+                        <input class="radio-group__radio" id="evening" type="radio" name="time" value="evening" />
+                        <label class="radio-group__label" for="evening" tabindex="0">Evening (6 PM to 12 AM)</label>
+                    </li>
+                    <li class="radio-group__option">
+                        <input class="radio-group__radio" id="night" type="radio" name="time" value="night" />
+                        <label class="radio-group__label" for="night" tabindex="0">Night (12 AM to 6 PM)</label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <div class="form__dividing-line"></div>
+
+            <fieldset class="radio-group">
+                <legend class="radio-group__legend">Preferred Weather Conditions</legend>
+                <ul class="radio-group__list">
+                    <li class="radio-group__option">
+                        <input class="radio-group__radio" id="temp" type="radio" name="sort-by" value="temp" />
+                        <label class="radio-group__label" for="temp" tabindex="0">Coolest temperature</label>
+                    </li>
+                    <li class="radio-group__option">
+                        <input class="radio-group__radio" id="humidity" type="radio" name="sort-by" value="humidity" />
+                        <label class="radio-group__label" for="humidity" tabindex="0">Lowest humidity</label>
+                    </li>
+                    <li class="radio-group__option">
+                        <input class="radio-group__radio" id="rain" type="radio" name="sort-by" value="rain" />
+                        <label class="radio-group__label" for="rain" tabindex="0">Least likely to rain</label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <input class="form__submit" type="submit" value="Submit" />
+
+            <!-- <i class="fa-solid fa-mountain-sun"></i> -->
+        </form>
+    </main>
     
+
     <script src="/scripts/index.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/1f9b885cb6.js" crossorigin="anonymous"></script>
 </body>
 </html>

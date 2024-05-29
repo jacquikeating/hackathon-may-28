@@ -1,3 +1,172 @@
-body{ 
-    background-color: white;
+@use './partials/__variables.scss' as *;
+@use './partials/__mixins.scss' as *;
+
+
+:root {
+    font-size: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 320px;
+    margin: auto;
+    height: 100vh;
+    background-color: $main-bg-clr;
 }   
+
+.header {
+    padding: $standard-padding $standard-padding 0 $standard-padding;
+    // position: relative;
+
+    // .fa-solid {
+    //     font-size: 3rem;
+    //     text-align: center;
+    //     display: block;
+    //     margin: $small-padding auto;
+    //     opacity: 0.6;
+    //     color: $heading-text-clr;
+
+    // }
+
+    // .fa-solid {
+//     height: 10rem;
+//     font-size: 60rem;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     z-index: -1;
+//     opacity: 0.04;
+//     color: $main-text-clr;
+// }
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 4rem;
+        font-family: 'Poetsen One';
+        text-align: center;
+        color: $heading-text-clr;
+    }
+
+    &__subtitle {
+        margin: 0 $standard-padding $large-padding $standard-padding;
+        font-size: 2rem;
+        font-weight: 500;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
+        text-align: center;
+        font-style: italic;
+        color: $main-text-clr;
+    }
+
+    &__dividing-line {
+        @include divider-gradient(6px, 100%);
+        margin: $large-padding 0;
+    }
+}
+
+.form {
+    padding: $small-padding $standard-padding;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    &__label {
+        @include label-text;
+    }
+
+    &__input {
+        @include input($small-padding, $small-padding);
+        @include body-text;
+        
+
+        &:focus {
+            outline: 1px solid $main-text-clr;
+        }
+
+        &::placeholder {
+            @include body-text;
+            color: $light-text-clr;
+        }
+    }
+
+    &__dividing-line {
+        @include divider-gradient(3px, 70%);
+    }
+
+    &__submit {
+        @include input($small-padding, $standard-padding);
+        @include label-text;
+        cursor: pointer;
+
+        &:hover {
+            background: $gradient;
+            font-weight: 700;
+            transform: scale(1.1);
+        }
+
+        &:focus {
+            @extend :hover;
+            border: none;
+            outline: 1px solid $heading-text-clr;
+        }
+    }
+}
+
+.radio-group {
+    display: flex;
+    border: 0;
+    padding: 0;
+    margin: 0;
+
+
+    &__legend {
+        @include label-text;
+    }
+
+    &__list {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+    }
+
+    &__label {
+        @include body-text;
+        @include input($small-padding, $small-padding);
+        cursor: pointer;
+
+        &:focus {
+            outline: 1px solid $main-text-clr;
+        }
+    }
+
+    &__radio {
+        display: none;
+
+        &:hover + .radio-group__label {
+            background-color: $soft-accent-clr;
+            font-weight: 700;
+        }
+
+        &:checked + .radio-group__label {
+            background-color: $accent-clr;
+            font-weight: 700;
+        }
+    }
+}
+
+// .fa-mountain-sun {
+//     height: 10rem;
+//     font-size: 60rem;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     z-index: -1;
+//     opacity: 0.04;
+//     color: $main-text-clr;
+// }
