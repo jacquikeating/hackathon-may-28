@@ -172,23 +172,33 @@ function displayResults(results, condition) {
   resultsListEl.innerHTML = "";
   const times = Object.keys(results);
   for (let i = 0; i < times.length; i++) {
-    displayOneResult(results, times[i], condition);
+    displayOneResult(results, times[i], condition, i);
   }
 }
 
-function displayOneResult(results, key, condition) {
+function displayOneResult(results, key, condition, i) {
+  console.log(typeof i);
   const resultsListItemEl = document.createElement("li");
   resultsListItemEl.classList.add("results__list-item");
+  if (i === 0) {
+    resultsListEl.classList.add("results__list-item--top");
+    console.log("working test");
+  }
   resultsListEl.appendChild(resultsListItemEl);
 
   const resultsTimeEl = document.createElement("h3");
   resultsTimeEl.classList.add("results__time");
+  if (i === 0) {
+    resultsTimeEl.classList.add("results__time--top");
+  }
   resultsTimeEl.textContent = key.slice(-4, key.length);
   resultsListItemEl.appendChild(resultsTimeEl);
 
   const resultsCritEl = document.createElement("p");
   resultsCritEl.classList.add("results__primary-criteria");
-
+  if (i === 0) {
+    resultsCritEl.classList.add("results__primary-criteria--top");
+  }
   if (condition === "temp") {
     resultsCritEl.textContent = results[key] + "° C";
   } else {
