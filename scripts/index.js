@@ -183,11 +183,17 @@ function displayOneResult(results, key, condition) {
 
   const resultsTimeEl = document.createElement("h3");
   resultsTimeEl.classList.add("results__time");
-  resultsTimeEl.textContent = key;
+  resultsTimeEl.textContent = key.slice(-4, key.length);
   resultsListItemEl.appendChild(resultsTimeEl);
 
   const resultsCritEl = document.createElement("p");
   resultsCritEl.classList.add("results__primary-criteria");
-  resultsCritEl.textContent = results[key];
+
+  if (condition === "temp") {
+    resultsCritEl.textContent = results[key] + "° C";
+  } else {
+    resultsCritEl.textContent = results[key] + "%";
+  }
+
   resultsListItemEl.appendChild(resultsCritEl);
 }
