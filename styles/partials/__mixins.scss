@@ -1,0 +1,45 @@
+@use './__variables.scss' as *;
+
+
+@mixin body-text {
+    font-size: $text-size-body;
+    font-weight: 400;
+    font-family: 'Nunito', Arial, Helvetica, sans-serif;
+    color: $main-text-clr;
+}
+
+@mixin label-text {
+    display: block;
+    width: 100%;
+    margin-bottom: -0.5rem;
+    font-size: $text-size-label;
+    font-weight: 600;
+    font-family: 'Nunito', Arial, Helvetica, sans-serif;
+    color: $heading-text-clr;
+}
+
+@mixin input($vertical-padding, $horizontal-padding) {
+    display: block;
+    width: 100%;
+    margin-top: $small-padding;
+    padding: $vertical-padding $horizontal-padding;
+    border-radius: 5px;
+    border: 1px solid $border-clr;
+    background-color: white;
+    transition: all linear 0.2s;
+}
+
+// @mixin border-gradient($width) {
+//     border-top: 3px solid;
+//     border-image-slice: 1;
+//     border-width: $width;
+//     border-image-source: $gradient;
+//     padding-top: $standard-padding;
+//  }
+ 
+ @mixin divider-gradient($height, $width) {
+    height: $height;
+    width: $width;
+    margin: auto;
+    background: $gradient;
+ }
