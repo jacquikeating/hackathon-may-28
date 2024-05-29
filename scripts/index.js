@@ -181,7 +181,7 @@ function displayOneResult(results, key, condition, i) {
   const resultsListItemEl = document.createElement("li");
   resultsListItemEl.classList.add("results__list-item");
   if (i === 0) {
-    resultsListEl.classList.add("results__list-item--top");
+    resultsListItemEl.classList.add("results__list-item--top");
     console.log("working test");
   }
   resultsListEl.appendChild(resultsListItemEl);
