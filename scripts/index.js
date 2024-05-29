@@ -232,6 +232,7 @@ function displayOneResult(results, key, condition, i) {
     const resultsIconEl = document.createElement("img");
     // resultsIconEl.classList.add("fa-solid fa-temperature-quarter");
     resultsIconEl.src = "./attributes/temperature-quarter-solid.svg";
+    resultsIconEl.classList.add("results__icon");
     resultsListItemEl.appendChild(resultsIconEl);
   }
 }

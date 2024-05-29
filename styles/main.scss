@@ -198,7 +198,6 @@ body {
         padding: 0;
         font-weight: 700;
         text-align: center;
-
     }
 
     &__list {
@@ -218,12 +217,22 @@ body {
         border: 1px solid $border-clr;
         border-radius: 5px;
         padding: $small-padding $standard-padding;
+        position: relative;
 
         &--top {
             border: 2px solid $heading-text-clr;
             background: $gradient;
             // background-color: $accent-clr;
         }
+    }
+
+    &__icon {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
     }
     
     &__time {
@@ -312,5 +321,12 @@ body {
         top: 50%;
         right: 1rem;
         font-size: 1.5rem;
+        display: none;
+    }
+
+    &:hover {
+        .input__icon { 
+            display: block;
+        }
     }
 }
