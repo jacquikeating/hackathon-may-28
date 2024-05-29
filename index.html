@@ -8,9 +8,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poetsen+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
     <title>When to Walk</title>
-</head>
-<body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./scripts/index.js" defer></script>
+    <script src="https://kit.fontawesome.com/1f9b885cb6.js" crossorigin="anonymous"></script>
 
+    <!-- inline script is cringe, this is just so I don't cause merge conflicts while testing. MOVE TO INDEX.JS WHEN READY! -->
+    <script>
+        function toggleForm() {
+            const main = document.querySelector(".main")
+            main.classList.add("show-form");
+            main.classList.remove("show-results");
+        }
+
+        function toggleResults() {
+            const main = document.querySelector(".main")
+            main.classList.add("show-results");
+            main.classList.remove("show-form");
+        }
+    </script>
+
+  </head>
+  
+  <body>
     <!-- Very basic naming/writing for now, will improve later -->
     <header class="header">
         <!-- <i class="fa-solid fa-mountain-sun"></i> -->
@@ -23,7 +42,36 @@
         <div class="header__dividing-line"></div>
     </header>
 
-    <main class="main">
+    <main class="main show-form">
+        <!-- inline onclick is cringe, this is just so I don't cause merge conflicts while testing. MOVE TO INDEX.JS WHEN READY! -->
+        <section class="results">
+            <h2 class="results__heading">Results</h2>
+
+            <ul class="results__list">
+                <li class="results__list-item results__list-item--top">
+                    <h3 class="results__time results__time--top">12 PM</h3>
+                    <p class="results__primary-criteria results__primary-criteria--top">15° C</p>
+                    <!-- <p class="results__secondary-criteria">62%</p>
+                    <p class="results__secondary-criteria">40% chance of rain</p> -->
+                </li>
+
+                <li class="results__list-item">
+                    <h3 class="results__time">1 PM</h3>
+                    <p class="results__primary-criteria">16° C</p>
+                    <!-- <p class="results__secondary-criteria">62%</p>
+                    <p class="results__secondary-criteria">40% chance of rain</p> -->
+                </li>
+
+                <li class="results__list-item">
+                    <h3 class="results__time">2 PM</h3>
+                    <p class="results__primary-criteria">17° C</p>
+                    <!-- <p class="results__secondary-criteria">62%</p>
+                    <p class="results__secondary-criteria">40% chance of rain</p> -->
+                </li>
+            </ul>
+
+        </section>
+        
         <form class="form">
 
             <div class="form__city">
@@ -75,22 +123,17 @@
                 </ul>
             </fieldset>
 
-            <input class="form__submit" type="submit" value="Submit" />
+            <input class="form__submit" type="submit" value="Submit" onclick="toggleResults()"/>
 
             <!-- <i class="fa-solid fa-mountain-sun"></i> -->
         </form>
 
-        <section class="results">
-            <h2 class="results__heading">Results</h2>
-            <ul class="results__list">
-                <li class="results__list-item">
-                    <h3 class="results__time">12 PM</h3>
-                    <p class="results__primary-criteria">15° C</p>
-                    <p class="results__secondary-criteria">62%</p>
-                    <p class="results__secondary-criteria">40% chance of rain</p>
-                </li>
-            </ul>
-        </section>
+        
+
+        <button class="main__toggle-form-btn" onclick="toggleForm()">
+            <i class="main__toggle-form-icon fa-solid fa-arrow-down-wide-short"></i>
+            <p class="main__toggle-form-text">Show form</p>
+        </button>
     </main>
     
 
